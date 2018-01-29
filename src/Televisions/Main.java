@@ -35,17 +35,53 @@ public class Main {
         System.out.println(" - " + channel2.getName());
         System.out.println(" - " + channel3.getName());
         System.out.println(" -- ");
+
+        // SCENARIOS 1
         System.out.println(" ");
+        System.out.println(" -- SCENARIO 1 -- ");
 
-        // USER1 CHANGES TV1's state
+        tv1.addChannel(channel1);
         user1.changeStatus(tv1, true);
-        user2.changeStatus(tv4, false);
-
-        // USER1 CHANGES Channel
         user1.changeChannel(tv1, channel1);
-        user2.changeChannel(tv3, channel3);
+        user1.changeStatus(tv1, false);
+
+        // SCENARIO 2
+        System.out.println(" ");
+        System.out.println(" -- SCENARIO 2 -- ");
+
+        user2.changeStatus(tv2, true);
+
+        // SCENARIO 3 -- BASED OFF S1
+        System.out.println(" ");
+        System.out.println(" -- SCENARIO 3 --");
+
+        user1.changeStatus(tv1, true);
+        user1.changeChannel(tv1, channel2);
+
+        // SCENARIO 4
+        System.out.println(" ");
+        System.out.println(" -- SCENARIO 4 --");
+
+        user2.changeChannel(tv2, channel2);
+
+        // SCENARIO 5
+        System.out.println(" ");
+        System.out.println(" -- SCENARIO 5 --");
+
+        user2.changeStatus(tv3, false);
+
+        // SCENARIO 6
+        System.out.println(" ");
+        System.out.println(" -- SCENARIO 6 --");
+
+        tv3.addChannel(channel1);
+        user2.changeStatus(tv3, true);
+        user2.changeStatus(tv3, true);
+
+        tv3.setOff();
 
         // PRINT INFOS
+        System.out.println(" ");
         System.out.println(" -- TELEVISIONS -- ");
         System.out.println(" - " + tv1.getBrand() + " - " + (tv1.isOn() ? tv1.getChannel().getName() : "Eteint"));
         System.out.println(" - " + tv2.getBrand() + " - " + (tv2.isOn() ? tv2.getChannel().getName() : "Eteint"));

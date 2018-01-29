@@ -1,10 +1,13 @@
 package Televisions;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TV {
 
     private String brand;
     private Channel channel;
     private boolean on;
+    private List<Channel> channelList = new ArrayList<>();
 
     TV(String brand)
     {
@@ -23,7 +26,13 @@ public class TV {
     public void setChannel(Channel channel) {
         if (this.isOn())
         {
-            this.channel = channel;
+            if (channelList.contains(channel))
+            {
+                this.channel = channel;
+            }
+            else{
+                System.out.println("ERROR: La chaine " + channel.getName() + " n'est pas autorisée sur la télévision " + this.getBrand());
+            }
         }
         else
         {
@@ -38,7 +47,14 @@ public class TV {
     public void setOn() {
         if (!this.isOn())
         {
-            this.on = true;
+            if (!channelList.isEmpty())
+            {
+                this.on = true;
+            }
+            else
+            {
+                System.out.println("ERROR: La télévision " + this.getBrand() + " ne peut afficher aucune chaine");
+            }
         }
         else
         {
@@ -55,6 +71,12 @@ public class TV {
         {
             System.out.println("ERROR: La télévision " + this.getBrand() + " est déjà éteinte !");
         }
-
     }
+
+    public void addChannel(Channel channel)
+    {
+        System.out.println("INFO: La télévision " + this.getBrand() + " peut maintenant accéder à " + channel.getName());
+        this.channelList.add(channel);
+    }
+
 }

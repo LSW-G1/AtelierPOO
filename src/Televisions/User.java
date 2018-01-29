@@ -21,7 +21,7 @@ public class User {
 
     public void changeStatus(TV television, Boolean on)
     {
-        System.out.print("INFO: " + this.getName() + " a changé le status de la TV: " + television.getBrand() + " (");
+        System.out.print("INFO: " + this.getName() + " a changé le statut de la TV: " + television.getBrand() + " (");
 
         if (on)
         {
