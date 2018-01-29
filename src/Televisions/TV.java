@@ -27,7 +27,7 @@ public class TV {
         }
         else
         {
-            System.out.println("La télévision " + this.getBrand() + " n'est pas allumée!");
+            System.out.println("ERROR: La télévision " + this.getBrand() + " n'est pas allumée!");
         }
     }
 
@@ -42,7 +42,7 @@ public class TV {
         }
         else
         {
-            System.out.println("La télévision " + this.getBrand() + " est déjà allumée !");
+            System.out.println("ERROR: La télévision " + this.getBrand() + " est déjà allumée !");
         }
     }
 
@@ -53,7 +53,7 @@ public class TV {
         }
         else
         {
-            System.out.println("La télévision " + this.getBrand() + " est déjà éteinte !");
+            System.out.println("ERROR: La télévision " + this.getBrand() + " est déjà éteinte !");
         }
 
     }

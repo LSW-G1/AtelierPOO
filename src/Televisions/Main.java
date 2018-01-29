@@ -24,6 +24,18 @@ public class Main {
         System.out.println(" - " + user1.getName());
         System.out.println(" - " + user2.getName());
         System.out.println(" -- ");
+        System.out.println(" -- TELEVISIONS -- ");
+        System.out.println(" - " + tv1.getBrand());
+        System.out.println(" - " + tv2.getBrand());
+        System.out.println(" - " + tv3.getBrand());
+        System.out.println(" - " + tv4.getBrand());
+        System.out.println(" -- " );
+        System.out.println(" -- CHAINES -- ");
+        System.out.println(" - " + channel1.getName());
+        System.out.println(" - " + channel2.getName());
+        System.out.println(" - " + channel3.getName());
+        System.out.println(" -- ");
+        System.out.println(" ");
 
         // USER1 CHANGES TV1's state
         user1.changeStatus(tv1, true);
