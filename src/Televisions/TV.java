@@ -5,33 +5,49 @@ import java.util.List;
 public class TV {
 
     private String brand;
-    private Channel channel;
+    private Channel currentChannel;
     private boolean on;
-    private List<Channel> channelList = new ArrayList<>();
+    private List<Channel> allowedChannels = new ArrayList<>();
 
+    /**
+     * Create a new TV
+     * @param brand
+     */
     TV(String brand)
     {
         this.brand = brand;
         this.on = false;
     }
 
+    /**
+     * Fetch the TV's brand
+     * @return
+     */
     public String getBrand() {
         return this.brand;
     }
 
-    public Channel getChannel() {
-        return this.channel;
+    /**
+     * Fetch the TV's current channel
+     * @return
+     */
+    public Channel getCurrentChannel() {
+        return this.currentChannel;
     }
 
-    public void setChannel(Channel channel) {
+    /**
+     * Sets the TV's current channel
+     * @param currentChannel
+     */
+    public void setCurrentChannel(Channel currentChannel) {
         if (this.isOn())
         {
-            if (channelList.contains(channel))
+            if (allowedChannels.contains(currentChannel))
             {
-                this.channel = channel;
+                this.currentChannel = currentChannel;
             }
             else{
-                System.out.println("ERROR: La chaine " + channel.getName() + " n'est pas autorisée sur la télévision " + this.getBrand());
+                System.out.println("ERROR: La chaine " + currentChannel.getName() + " n'est pas autorisée sur la télévision " + this.getBrand());
             }
         }
         else
@@ -40,14 +56,21 @@ public class TV {
         }
     }
 
+    /**
+     * Is the TV on
+     * @return boolean
+     */
     public boolean isOn() {
         return this.on;
     }
 
+    /**
+     * Turn on the TV
+     */
     public void setOn() {
         if (!this.isOn())
         {
-            if (!channelList.isEmpty())
+            if (!allowedChannels.isEmpty())
             {
                 this.on = true;
             }
@@ -62,6 +85,9 @@ public class TV {
         }
     }
 
+    /**
+     * Turn off the TV
+     */
     public void setOff() {
         if (this.isOn())
         {
@@ -73,10 +99,24 @@ public class TV {
         }
     }
 
+    /**
+     * Add a channel in the allowed channels list
+     * @param channel
+     */
     public void addChannel(Channel channel)
     {
         System.out.println("INFO: La télévision " + this.getBrand() + " peut maintenant accéder à " + channel.getName());
-        this.channelList.add(channel);
+        this.allowedChannels.add(channel);
+    }
+
+    /**
+     * Remove a channel from the allowed channels list
+     * @param channel
+     */
+    public void removeChannel(Channel channel)
+    {
+        System.out.println("INFO: La télévision " + this.getBrand() + " ne peut plus accéder à " + channel.getName());
+        this.allowedChannels.remove(channel);
     }
 
 }

@@ -78,14 +78,14 @@ public class Main {
         user2.changeStatus(tv3, true);
         user2.changeStatus(tv3, true);
 
-        tv3.setOff();
+        tv3.setOff(););
 
         // PRINT INFOS
         System.out.println(" ");
         System.out.println(" -- TELEVISIONS -- ");
-        System.out.println(" - " + tv1.getBrand() + " - " + (tv1.isOn() ? tv1.getChannel().getName() : "Eteint"));
-        System.out.println(" - " + tv2.getBrand() + " - " + (tv2.isOn() ? tv2.getChannel().getName() : "Eteint"));
-        System.out.println(" - " + tv3.getBrand() + " - " + (tv3.isOn() ? tv3.getChannel().getName() : "Eteint"));
-        System.out.println(" - " + tv4.getBrand() + " - " + (tv4.isOn() ? tv4.getChannel().getName() : "Eteint"));
+        System.out.println(" - " + tv1.getBrand() + " - " + (tv1.isOn() ? tv1.getCurrentChannel().getName() : "Eteint"));
+        System.out.println(" - " + tv2.getBrand() + " - " + (tv2.isOn() ? tv2.getCurrentChannel().getName() : "Eteint"));
+        System.out.println(" - " + tv3.getBrand() + " - " + (tv3.isOn() ? tv3.getCurrentChannel().getName() : "Eteint"));
+        System.out.println(" - " + tv4.getBrand() + " - " + (tv4.isOn() ? tv4.getCurrentChannel().getName() : "Eteint"));
     }
 }
