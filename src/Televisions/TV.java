@@ -11,7 +11,7 @@ public class TV {
 
     /**
      * Create a new TV
-     * @param brand
+     * @param String brand
      */
     TV(String brand)
     {
@@ -21,7 +21,7 @@ public class TV {
 
     /**
      * Fetch the TV's brand
-     * @return
+     * @return String
      */
     public String getBrand() {
         return this.brand;
@@ -29,7 +29,7 @@ public class TV {
 
     /**
      * Fetch the TV's current channel
-     * @return
+     * @return Channel currentChannel
      */
     public Channel getCurrentChannel() {
         return this.currentChannel;
@@ -37,7 +37,7 @@ public class TV {
 
     /**
      * Sets the TV's current channel
-     * @param currentChannel
+     * @param Channel currentChannel
      */
     public void setCurrentChannel(Channel currentChannel) {
         if (this.isOn())
@@ -101,7 +101,7 @@ public class TV {
 
     /**
      * Add a channel in the allowed channels list
-     * @param channel
+     * @param Channel channel
      */
     public void addChannel(Channel channel)
     {
@@ -111,7 +111,7 @@ public class TV {
 
     /**
      * Remove a channel from the allowed channels list
-     * @param channel
+     * @param Channel channel
      */
     public void removeChannel(Channel channel)
     {
@@ -119,4 +119,11 @@ public class TV {
         this.allowedChannels.remove(channel);
     }
 
+    /**
+     * Fetch the allowed channels list
+     * @return Collection Channel
+     */
+    public List<Channel> getAllowedChannels() {
+        return this.allowedChannels;
+    }
 }

@@ -6,7 +6,7 @@ public class User {
 
     /**
      * Create a new user
-     * @param name
+     * @param String name
      */
     User(String name)
     {
@@ -15,7 +15,7 @@ public class User {
 
     /**
      * Fetch the user's name
-     * @return
+     * @return String
      */
     public String getName() {
         return this.name;
@@ -23,8 +23,8 @@ public class User {
 
     /**
      * Make the user change the current channel of the TV
-     * @param television
-     * @param channel
+     * @param TV television
+     * @param Channel channel
      */
     public void changeChannel(TV television, Channel channel)
     {
@@ -34,8 +34,8 @@ public class User {
 
     /**
      * Make the user change the status of the TV
-     * @param television
-     * @param on
+     * @param TV television
+     * @param boolean on
      */
     public void changeStatus(TV television, Boolean on)
     {

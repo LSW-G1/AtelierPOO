@@ -7,8 +7,8 @@ public class Channel {
 
     /**
      * Create a new Channel
-     * @param name
-     * @param number
+     * @param String name
+     * @param int number
      */
     Channel(String name, int number)
     {
@@ -18,7 +18,7 @@ public class Channel {
 
     /**
      * Fetch the channel's name
-     * @return
+     * @return String
      */
     public String getName() {
         return this.name;
@@ -26,7 +26,7 @@ public class Channel {
 
     /**
      * Fetch the channel's number
-     * @return
+     * @return int
      */
     public int getNumber() {
         return this.number;

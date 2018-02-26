@@ -1,8 +1,32 @@
 package Televisions;
 
+import java.util.List;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        JVDCTVDAO jvdctvdao = new JVDCTVDAO();
+        jvdctvdao.getConnection();
+
+        // SELECT * TV
+        List<TV> TVs = jvdctvdao.selectAll();
+        for (TV list: TVs)
+        {
+            // SELECT ALLOWED CHANNEL FOR TV {list}
+            List<Channel> channels = list.getAllowedChannels();
+
+            // DISPLAY LIST OF ALLOWED CHANNEL FOR TV {list}
+            System.out.println(" -- " + list.getBrand());
+            for (Channel channel : channels)
+            {
+                System.out.println(channel.getName());
+            }
+        }
+
+    }
+
+    private static void init() {
 
         // INIT CHANNELS
         Channel channel1 = new Channel("Channel 1", 1);
@@ -78,7 +102,7 @@ public class Main {
         user2.changeStatus(tv3, true);
         user2.changeStatus(tv3, true);
 
-        tv3.setOff(););
+        tv3.setOff();
 
         // PRINT INFOS
         System.out.println(" ");
