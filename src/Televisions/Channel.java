@@ -10,7 +10,7 @@ public class Channel {
      * @param String name
      * @param int number
      */
-    Channel(String name, int number)
+    public Channel(String name, int number)
     {
         this.name = name;
         this.number = number;

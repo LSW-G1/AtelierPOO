@@ -1,4 +1,7 @@
-package Televisions;
+package Televisions.DAO;
+
+import Televisions.Channel;
+import Televisions.TV;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,13 +10,8 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JVDCTVDAO extends DAO implements TVDAO{
-
-    /**P
-     * Add a TV into the DB
-     * @param TV televisionTHE SQL QUERY
-     */
-    @Override
+public class TVs extends DAO
+{
     public void insert(TV television) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO TV(id, brand) VALUES (null, ?)");
@@ -23,13 +21,9 @@ public class JVDCTVDAO extends DAO implements TVDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
-    /**
-     * Select all TVs from DB
-     * @return Collection
-     */
-    @Override
     public List<TV> selectAll() {
         List<TV> televisions = new LinkedList<>();
 

@@ -13,7 +13,7 @@ public class TV {
      * Create a new TV
      * @param String brand
      */
-    TV(String brand)
+    public TV(String brand)
     {
         this.brand = brand;
         this.on = false;

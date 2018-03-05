@@ -1,16 +1,17 @@
 package Televisions;
 
+import Televisions.DAO.TVs;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args)
     {
-        JVDCTVDAO jvdctvdao = new JVDCTVDAO();
-        jvdctvdao.getConnection();
+        TVs TVsDAO = new TVs();
+        TVsDAO.getConnection();
 
         // SELECT * TV
-        List<TV> TVs = jvdctvdao.selectAll();
+        List<TV> TVs = TVsDAO.selectAll();
         for (TV list: TVs)
         {
             // SELECT ALLOWED CHANNEL FOR TV {list}

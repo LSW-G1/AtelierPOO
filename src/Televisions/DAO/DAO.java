@@ -1,4 +1,4 @@
-package Televisions;
+package Televisions.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

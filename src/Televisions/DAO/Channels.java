@@ -1,16 +1,16 @@
-package Televisions;
+package Televisions.DAO;
 
-import java.sql.*;
+import Televisions.Channel;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-public class JVDCChannelDAO extends DAO implements ChannelDAO {
-
-    /**
-     * Insert a new channel in DB
-     * @param Channel channel
-     */
-    @Override
+public class Channels extends DAO
+{
     public void insert(Channel channel) {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Channel(id, name, number) VALUES (null, ?, ?)");
@@ -23,11 +23,6 @@ public class JVDCChannelDAO extends DAO implements ChannelDAO {
         }
     }
 
-    /**
-     * List all the channels in the DB
-     * @return List
-     */
-    @Override
     public List<Channel> selectAll() {
         List<Channel> channels = new LinkedList<>();
 
@@ -55,5 +50,4 @@ public class JVDCChannelDAO extends DAO implements ChannelDAO {
         // RETURN THE LIST
         return channels;
     }
-
 }
